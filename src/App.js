@@ -1,8 +1,23 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+const fs = require('fs')
 
 class App extends Component {
+
+  constructor(options={}){
+    super();
+    // Data which will write in a file. 
+    let data = "Learning how to write in a file."
+
+    // Write data in 'Output.txt' . 
+    fs.writeFile('Output.txt', data, (err) => {
+
+      // In case of a error throw err. 
+      if (err) throw err;
+    }) 
+  }
+
   render() {
     return (
       <div className="App">
